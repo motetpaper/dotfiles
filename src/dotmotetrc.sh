@@ -5,6 +5,10 @@
 
 ##
 
+msg() {
+  echo "hello world"
+}
+
 upd() {
   ## updater
   sudo apt update && sudo apt upgrade -y
@@ -49,6 +53,14 @@ proc6() {
     
     upd
     sudo apt install -y sublime-text
+}
+
+proc22() {
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash  
+  echo 
+
+  echo "now try this: $ nvm install 22"
+  echo
 }
 
 proc84() {
