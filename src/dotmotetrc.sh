@@ -117,3 +117,15 @@ gitupd() {
   git config --global user.email
 }
 
+
+abby() {
+  php -S localhost:8899
+}
+
+bobby() {
+  php -S localhost:8898
+}
+
+cammy() {
+  php -S localhost:8897
+}
