@@ -4,14 +4,20 @@
 ## motet developer experience workflows
 
 ##
+PROG="O_O"
 
 msg() {
-  echo "hello world"
+
+  echo
+  
+  echo "[${PROG}]: $1"
+  echo
 }
 
 upd() {
   ## updater
   sudo apt update && sudo apt upgrade -y
+  sudo apt autoremove -y
 }
 
 proc1() {
@@ -59,7 +65,7 @@ proc22() {
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash  
   echo 
 
-  echo "now try this: $ nvm install 22"
+  msg "now try this: $ nvm install 22"
   echo
 }
 
@@ -89,13 +95,13 @@ gitupd() {
   ## uses latest commit to setup glt globals
 
   if [[ -z $(command -v git) ]]; then
-    echo "[gitupd.sh] you need to install git"
-    echo "[gitupd.sh] try: $ sudo apt install git"
+    msg "[gitupd]: you need to install git"
+    msg "[gitupd]: try: $ sudo apt install git"
     return
   fi
 
   if [[ -z $(git log) ]]; then
-    echo "[gitupd.sh] not a git folder"
+    msg "[gitupd]: not a git folder"
     return
   fi
 
@@ -115,6 +121,8 @@ gitupd() {
   ## get the config
   git config --global user.name
   git config --global user.email
+
+  msg "[gitupd]: done."
 }
 
 
